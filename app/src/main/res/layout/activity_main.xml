@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
 
     android:background="#000000"
-    android:background="#A8DADC"
     tools:context=".MainActivity">
 
     <TextView
