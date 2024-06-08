@@ -3,47 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="#000000"
     android:background="#A8DADC"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/bienvenido_a"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="     Bienvenido a"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="         MedicTime"
-        android:textColor="@color/black"
-        android:textSize="32sp"
+        android:layout_marginTop="160dp"
+        android:layout_marginStart="65dp"
+        android:text="@string/medictime"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnCalendarios"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:text="@string/ver_calendarios"
         android:layout_below="@id/tvWelcome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="180dp"
-        android:text="ver calendarios"
         android:backgroundTint="#457B9D"
-        />
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp" />
 
     <Button
         android:id="@+id/btnPerfil"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:text="@string/perfil"
+        android:textSize="20sp"
         android:layout_below="@id/btnCalendarios"
-        android:layout_marginTop="14dp"
-        android:layout_marginStart="80dp"
-        android:text="perfil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#1D3557" />
+
 </RelativeLayout>

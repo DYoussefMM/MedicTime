@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MedicTime</string>
+    <string name="bienvenido_a">¡Bienvenido a</string>
+    <string name="medictime">MedicTime!</string>
+    <string name="ver_calendarios">ver calendarios</string>
+    <string name="perfil">perfil</string>
 </resources>
