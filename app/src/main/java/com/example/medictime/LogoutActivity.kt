@@ -1,6 +1,5 @@
 package com.example.medictime
 
-// LogoutActivity.kt
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,6 @@ class LogoutActivity : AppCompatActivity() {
         prefs.edit().putBoolean("is_authenticated", false).apply()
 
         FirebaseAuth.getInstance().signOut()
-
         val intent = Intent(this, AuthActivity::class.java)
         startActivity(intent)
         finish()
