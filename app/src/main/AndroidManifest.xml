@@ -25,6 +25,9 @@
             android:name=".CrearCalendarioActivity"
             android:exported="false" />
         <activity
+            android:name=".AuthActivity"
+            android:exported="false" />
+        <activity
             android:name=".PerfilActivity"
             android:exported="false" />
     </application>

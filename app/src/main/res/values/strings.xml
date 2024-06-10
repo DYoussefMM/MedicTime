@@ -4,4 +4,13 @@
     <string name="medictime">MedicTime!</string>
     <string name="ver_calendarios">ver calendarios</string>
     <string name="perfil">perfil</string>
+    <string name="username_hint">Usuario</string>
+    <string name="email_hint">Correo Electronico</string>
+    <string name="password_hint">contraseña</string>
+    <string name="login_button_text">Iniciar sesión</string>
+    <string name="register_button_text">Registrar</string>
+    <string name="register_text">Registro:</string>
+    <string name="user_name">Nombre de Usuario</string>
+    <string name="user_email">correo@example.com</string>
+    <string name="cerrar_sesion">Cerrar sesion</string>
 </resources>
