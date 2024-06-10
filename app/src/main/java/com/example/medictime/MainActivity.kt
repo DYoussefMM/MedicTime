@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val prefs = getSharedPreferences("auth_prefs", MODE_PRIVATE)
         if (!prefs.getBoolean("is_authenticated", false)) {
             // El usuario no está autenticado, llevarlo a la AuthActivity
+            onStop()
             val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
             finish()
