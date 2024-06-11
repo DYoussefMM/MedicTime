@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "788411985043",
+    "project_id": "medictime-8efe6",
+    "storage_bucket": "medictime-8efe6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788411985043:android:49a6cdd4a67605a4fbf166",
+        "android_client_info": {
+          "package_name": "com.example.medictime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788411985043-jq3f565e6obb2ipb087hk2nb3mh05ld6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medictime",
+            "certificate_hash": "c4c789f5e484bc30e218c97f8742beabf4c91569"
+          }
+        },
+        {
+          "client_id": "788411985043-e48ujs5d1ckuo41r9584c96dvo9uhr5g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5RNueae7RyXKk0k6NLw-A_Qqd0ApjbCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788411985043-e48ujs5d1ckuo41r9584c96dvo9uhr5g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

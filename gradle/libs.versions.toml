@@ -8,6 +8,11 @@ espressoCore = "3.5.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 gson = "2.11.0"
+firebaseBom = "33.1.0"
+firebaseAnalytics = "22.0.1"
+comGoogleGmsGoogleServicesGradlePlugin = "4.4.2"
+firebaseAuthKtx = "23.0.0"
+playServicesAuth = "21.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -17,6 +22,11 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
+com-google-gms-google-services-gradle-plugin = { group = "com.google.gms.google-services", name = "com.google.gms.google-services.gradle.plugin", version.ref = "comGoogleGmsGoogleServicesGradlePlugin" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
