@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 data class Calendar(
     val title: String,
-    val date: String
+    val descripcion: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
@@ -14,7 +14,7 @@ data class Calendar(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(title)
-        parcel.writeString(date)
+        parcel.writeString(descripcion)
     }
 
     override fun describeContents(): Int {

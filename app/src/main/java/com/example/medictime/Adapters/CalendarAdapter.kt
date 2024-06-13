@@ -32,7 +32,7 @@ class CalendarAdapter(private val calendars: List<Calendar>, private val context
 
         val calendar = calendars[position]
         viewHolder.titleTextView.text = calendar.title
-        viewHolder.dateTextView.text = calendar.date
+        viewHolder.dateTextView.text = calendar.descripcion
 
         return view
     }

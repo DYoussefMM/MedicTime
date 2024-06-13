@@ -25,7 +25,7 @@ class CrearCalendarioActivity : AppCompatActivity() {
             // Create a bundle to pass the calendar list
             val bundle = Bundle()
             val calendarList = arrayListOf(calendar)
-            bundle.putParcelableArrayList(CalendariosActivity.EXTRA_CALENDARS, calendarList)
+            bundle.putParcelableArrayList(CalendariosActivity.EXTRA_CALENDAR, calendarList)
 
             // Create an intent to pass the bundle
             val intent = Intent()

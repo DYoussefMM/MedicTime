@@ -29,7 +29,7 @@ class CalendariosActivity : AppCompatActivity() {
             if (result.resultCode == RESULT_OK) {
                 val data = result.data
                 val bundle = data?.extras
-                val calendarList = bundle?.getParcelableArrayList<Calendar>(EXTRA_CALENDARS)
+                val calendarList = bundle?.getParcelableArrayList<Calendar>(EXTRA_CALENDAR)
                 calendarList?.let { calendars.addAll(it) }
                 SharedPreferencesHelper.saveCalendars(this, calendars)
                 (lvCalendarios.adapter as CalendarAdapter).notifyDataSetChanged()
@@ -47,6 +47,14 @@ class CalendariosActivity : AppCompatActivity() {
             deleteCalendar(position)
             true
         }
+
+        lvCalendarios.setOnItemClickListener { _, _, position, _ ->
+            val calendar = calendars[position]
+            val intent = Intent(this, MostrarCalendarioActivity::class.java).apply {
+                putExtra(EXTRA_CALENDAR, calendar)
+            }
+            startActivity(intent)
+        }
     }
 
     private fun deleteCalendar(position: Int) {
@@ -56,6 +64,6 @@ class CalendariosActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val EXTRA_CALENDARS = "extra_calendars"
+        const val EXTRA_CALENDAR = "extra_calendar"
     }
 }
