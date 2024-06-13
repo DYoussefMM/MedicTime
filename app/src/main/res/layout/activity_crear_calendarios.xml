@@ -35,7 +35,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/bordescripcion"
-        android:hint="   Nombre del Usuario"
+        android:hint="Nombre del Usuario"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
         android:layout_marginTop="20dp"
         android:textColor="#000000"
         android:background="@drawable/bordescripcion"
-        android:hint="  Descripción" />
+        android:hint="Descripción" />
 
     <Button
         android:id="@+id/btnGuardar"
