@@ -13,4 +13,19 @@
     <string name="user_name">Nombre de Usuario</string>
     <string name="user_email">correo@example.com</string>
     <string name="cerrar_sesion">Cerrar sesion</string>
+    <string name="tvUserName">Usuario</string>
+    <string name="add_events">Agregar Evento</string>
+    <string name="share_calendar">Compartir Calendario</string>
+    <string name="recipient_email_hint">Correo electrónico del destinatario</string>
+    <string name="select_date">Seleccionar Fecha</string>
+    <string name="select_time">Seleccionar Hora</string>
+    <string name="event_title_hint">Título del Evento</string>
+    <string name="event_description_hint">Descripción del Evento</string>
+    <string name="title_calendar">Título del Calendario</string>
+    <string name="description_calendar">Descripción del Calendario</string>
+    <string name="crear_nuevo_calendario">Crear nuevo calendario</string>
+    <string name="title_hint">Título del Calendario</string>
+    <string name="description_hint">Descripción del Calendario</string>
+    <string name="create_button_text">Crear Calendario</string>
+
 </resources>

@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:text="@string/title_calendar"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        tools:ignore="HardcodedText" />
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="Date"
+        android:text="@string/description_calendar"
         android:textSize="14sp"
-        tools:ignore="HardcodedText" />
+        android:layout_marginTop="4dp" />
 </LinearLayout>
