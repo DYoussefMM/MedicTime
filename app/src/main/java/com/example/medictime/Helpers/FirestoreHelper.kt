@@ -25,7 +25,11 @@ object FirestoreHelper {
         val firestore = FirestoreInstance.getInstance()
         val auth = AuthInstance.getInstance()
 
-        val userId = auth.currentUser?.uid?: return onFailure(Exception("Usuario no autenticado"))
+        val userId = auth.currentUser?.uid
+        if (userId == null) {
+            onFailure(Exception("Usuario no autenticado"))
+            return
+        }
 
         val calendarData = hashMapOf(
             "title" to calendar.title,
@@ -36,7 +40,9 @@ object FirestoreHelper {
         firestore.collection("users").document(userId).collection("calendars")
             .document(calendar.title)
             .set(calendarData)
-            .addOnSuccessListener { onSuccess() }
+            .addOnSuccessListener {
+                addGlobalHistory("saveCalendar", calendar, onSuccess, onFailure)
+            }
             .addOnFailureListener { exception -> onFailure(exception) }
     }
 
@@ -44,7 +50,11 @@ object FirestoreHelper {
         val firestore = FirestoreInstance.getInstance()
         val auth = AuthInstance.getInstance()
 
-        val userId = auth.currentUser?.uid ?: return onFailure(Exception("Usuario no autenticado"))
+        val userId = auth.currentUser?.uid
+        if (userId == null) {
+            onFailure(Exception("Usuario no autenticado"))
+            return
+        }
 
         firestore.collection("users").document(userId).collection("calendars")
             .get()
@@ -57,6 +67,14 @@ object FirestoreHelper {
 
     fun shareCalendar(calendar: Calendar, recipientEmail: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
         val firestore = FirestoreInstance.getInstance()
+        val auth = AuthInstance.getInstance()
+
+        val userId = auth.currentUser?.uid
+        if (userId == null) {
+            onFailure(Exception("Usuario no autenticado"))
+            return
+        }
+
         val calendarData = hashMapOf(
             "title" to calendar.title,
             "descripcion" to calendar.descripcion,
@@ -66,7 +84,9 @@ object FirestoreHelper {
         firestore.collection("sharedCalendars").document(recipientEmail).collection("calendars")
             .document(calendar.title)
             .set(calendarData)
-            .addOnSuccessListener { onSuccess() }
+            .addOnSuccessListener {
+                addGlobalHistory("shareCalendar", calendar, onSuccess, onFailure)
+            }
             .addOnFailureListener { exception -> onFailure(exception) }
     }
 
@@ -77,24 +97,54 @@ object FirestoreHelper {
             .get()
             .addOnSuccessListener { result ->
                 val sharedCalendars = result.toObjects(Calendar::class.java)
+                sharedCalendars.forEach { it.isShared = true }
                 onSuccess(sharedCalendars)
             }
-            .addOnFailureListener { exception ->
-                onFailure(exception)
-            }
+            .addOnFailureListener { exception -> onFailure(exception) }
     }
 
     fun deleteCalendar(calendar: Calendar, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
         val firestore = FirestoreInstance.getInstance()
         val auth = AuthInstance.getInstance()
 
-        val userId = auth.currentUser?.uid?: return onFailure(Exception("Usuario no autenticado"))
+        val userId = auth.currentUser?.uid
+        if (userId == null) {
+            onFailure(Exception("Usuario no autenticado"))
+            return
+        }
 
         firestore.collection("users").document(userId).collection("calendars")
             .document(calendar.title)
             .delete()
-            .addOnSuccessListener { onSuccess() }
+            .addOnSuccessListener {
+                addGlobalHistory("deleteCalendar", calendar, onSuccess, onFailure)
+            }
             .addOnFailureListener { exception -> onFailure(exception) }
     }
 
+    fun deleteSharedCalendar(calendar: Calendar, recipientEmail: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        val firestore = FirestoreInstance.getInstance()
+
+        firestore.collection("sharedCalendars").document(recipientEmail).collection("calendars")
+            .document(calendar.title)
+            .delete()
+            .addOnSuccessListener {
+                addGlobalHistory("deleteSharedCalendar", calendar, onSuccess, onFailure)
+            }
+            .addOnFailureListener { exception -> onFailure(exception) }
+    }
+
+    private fun addGlobalHistory(action: String, calendar: Calendar, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        val firestore = FirestoreInstance.getInstance()
+        val historyData = hashMapOf(
+            "action" to action,
+            "calendarTitle" to calendar.title,
+            "timestamp" to System.currentTimeMillis()
+        )
+
+        firestore.collection("globalHistory")
+            .add(historyData)
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { exception -> onFailure(exception) }
+    }
 }

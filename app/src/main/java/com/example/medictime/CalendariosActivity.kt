@@ -61,7 +61,12 @@ class CalendariosActivity : AppCompatActivity() {
 
         lvCalendarios.onItemLongClickListener = AdapterView.OnItemLongClickListener { _, _, position, _ ->
             val calendar = calendars[position]
-            deleteCalendar(calendar)
+            if (calendar.isShared) {
+                val recipientEmail = auth.currentUser?.email ?: ""
+                deleteSharedCalendar(calendar, recipientEmail)
+            } else {
+                deleteCalendar(calendar)
+            }
             true
         }
 
@@ -122,6 +127,21 @@ class CalendariosActivity : AppCompatActivity() {
             onFailure = { _ ->
                 // Failure handling
                 Toast.makeText(this, "Error al eliminar el calendario", Toast.LENGTH_SHORT).show()
+            }
+        )
+        (findViewById<ListView>(R.id.lvCalendarios).adapter as CalendarAdapter).notifyDataSetChanged()
+    }
+
+    private fun deleteSharedCalendar(calendar: Calendar, recipientEmail: String) {
+        calendars.remove(calendar)
+        FirestoreHelper.deleteSharedCalendar(calendar, recipientEmail,
+            onSuccess = {
+                // Success handling
+                Toast.makeText(this, "Calendario compartido eliminado", Toast.LENGTH_SHORT).show()
+            },
+            onFailure = { _ ->
+                // Failure handling
+                Toast.makeText(this, "Error al eliminar el calendario compartido", Toast.LENGTH_SHORT).show()
             }
         )
         (findViewById<ListView>(R.id.lvCalendarios).adapter as CalendarAdapter).notifyDataSetChanged()

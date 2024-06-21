@@ -8,24 +8,26 @@ data class Calendar(
     val title: String = "",
     val descripcion: String = "",
     val creator: String = "", // Añadir este campo
-    var events: MutableList<Event> = mutableListOf() // Lista de eventos
+    var events: MutableList<Event> = mutableListOf(), // Lista de eventos
+    var isShared: Boolean = false // Campo para indicar si es compartido
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
-        parcel.readString() ?: ""
-    ) {
-        parcel.readTypedList(events, Event.CREATOR)
-    }
+        parcel.readString() ?: "",
+        mutableListOf<Event>().apply { parcel.readTypedList(this, Event.CREATOR) },
+        parcel.readByte() != 0.toByte()
+    )
 
     // Constructor sin argumentos añadido para Firebase Firestore
-    constructor() : this("", "", "")
+    constructor() : this("", "", "", mutableListOf(), false)
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(title)
         parcel.writeString(descripcion)
         parcel.writeString(creator)
         parcel.writeTypedList(events)
+        parcel.writeByte(if (isShared) 1 else 0)
     }
 
     override fun describeContents(): Int {
@@ -76,8 +78,8 @@ data class Calendar(
             }
         }
     }
-
 }
+
 
 
 
