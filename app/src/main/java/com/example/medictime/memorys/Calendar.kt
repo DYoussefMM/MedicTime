@@ -1,4 +1,4 @@
-package com.example.medictime.Memorys
+package com.example.medictime.memorys
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -47,21 +47,24 @@ data class Calendar(
     data class Event(
         val title: String,
         val description: String,
-        val date: Long
+        val date: Long,
+        val medicinas: String // Nueva propiedad para medicinas
     ) : Parcelable {
 
-        constructor() : this("", "", 0) // Constructor sin argumentos
+        constructor() : this("", "", 0, "") // Constructor sin argumentos
 
         constructor(parcel: Parcel) : this(
             parcel.readString() ?: "",
             parcel.readString() ?: "",
-            parcel.readLong()
+            parcel.readLong(),
+            parcel.readString() ?: ""
         )
 
         override fun writeToParcel(parcel: Parcel, flags: Int) {
             parcel.writeString(title)
             parcel.writeString(description)
             parcel.writeLong(date)
+            parcel.writeString(medicinas) // Escribir la nueva propiedad en el parcel
         }
 
         override fun describeContents(): Int {
@@ -78,6 +81,7 @@ data class Calendar(
             }
         }
     }
+
 }
 
 

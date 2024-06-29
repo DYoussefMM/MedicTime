@@ -1,6 +1,6 @@
-package com.example.medictime.Helpers
+package com.example.medictime.helpers
 
-import com.example.medictime.Memorys.Calendar
+import com.example.medictime.memorys.Calendar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.example.medictime.Memorys.Calendar
+import com.example.medictime.memorys.Calendar
 import com.example.medictime.R
 
 class CalendarAdapter(private val calendars: List<Calendar>, private val context: Context) : BaseAdapter() {

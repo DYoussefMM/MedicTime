@@ -10,8 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.medictime.Helpers.FirestoreHelper
-import com.example.medictime.Memorys.Calendar
+import com.example.medictime.helpers.FirestoreHelper
+import com.example.medictime.memorys.Calendar
 import com.google.firebase.auth.FirebaseAuth
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar
 import java.util.Calendar as JavaCalendar
@@ -69,7 +69,7 @@ class MostrarCalendarioActivity : AppCompatActivity() {
                 if (eventsForDay.isNotEmpty()) {
                     val eventsStringBuilder = StringBuilder()
                     eventsForDay.forEachIndexed { index, event ->
-                        eventsStringBuilder.append("${event.title}: ${event.description}")
+                        eventsStringBuilder.append("${event.title}: ${event.description}, Medicinas: ${event.medicinas}")
                         if (index < eventsForDay.size - 1) {
                             eventsStringBuilder.append("\n")
                         }
@@ -121,6 +121,7 @@ class MostrarCalendarioActivity : AppCompatActivity() {
 
         val etEventTitle: EditText = view.findViewById(R.id.etEventTitle)
         val etEventDescription: EditText = view.findViewById(R.id.etEventDescription)
+        val etEventMedicinas: EditText = view.findViewById(R.id.etEventMedicinas)
         val btnDatePicker: Button = view.findViewById(R.id.btnDatePicker)
         val btnTimePicker: Button = view.findViewById(R.id.btnTimePicker)
 
@@ -148,6 +149,7 @@ class MostrarCalendarioActivity : AppCompatActivity() {
         builder.setPositiveButton("Guardar") { _, _ ->
             val eventTitle = etEventTitle.text.toString()
             val eventDescription = etEventDescription.text.toString()
+            val eventMedicinas = etEventMedicinas.text.toString()
             if (eventTitle.isNotEmpty() && ::selectedDate.isInitialized && ::selectedTime.isInitialized) {
                 val eventDate = JavaCalendar.getInstance().apply {
                     set(
@@ -158,7 +160,7 @@ class MostrarCalendarioActivity : AppCompatActivity() {
                         selectedTime.get(JavaCalendar.MINUTE)
                     )
                 }.timeInMillis
-                val event = Calendar.Event(eventTitle, eventDescription, eventDate)
+                val event = Calendar.Event(eventTitle, eventDescription, eventDate, eventMedicinas)
                 selectedCalendar.events.add(event)
                 FirestoreHelper.saveCalendar(selectedCalendar, {
                     Toast.makeText(this, "Evento agregado", Toast.LENGTH_SHORT).show()
@@ -184,7 +186,7 @@ class MostrarCalendarioActivity : AppCompatActivity() {
         val etRecipientEmail: EditText = view.findViewById(R.id.etRecipientEmail)
 
         builder.setPositiveButton("Compartir") { _, _ ->
-            val recipientEmail = etRecipientEmail.text.toString()
+            val recipientEmail  = etRecipientEmail.text.toString()
             if (recipientEmail.isNotEmpty()) {
                 FirestoreHelper.shareCalendar(selectedCalendar, recipientEmail, {
                     Toast.makeText(this, "Calendario compartido", Toast.LENGTH_SHORT).show()
@@ -208,3 +210,4 @@ class MostrarCalendarioActivity : AppCompatActivity() {
                 cal1.get(JavaCalendar.DAY_OF_MONTH) == cal2.get(JavaCalendar.DAY_OF_MONTH)
     }
 }
+

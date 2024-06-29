@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,6 +23,14 @@
         android:minHeight="48dp"
         android:importantForAutofill="yes"
         android:autofillHints="description" />
+
+    <EditText
+        android:id="@+id/etEventMedicinas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Introduce las medicinas"
+        android:inputType="text"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnDatePicker"
