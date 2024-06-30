@@ -5,17 +5,18 @@
     android:layout_height="match_parent"
     android:background="#8FE6FF"
     android:orientation="vertical"
-    tools:context=".CalendariosActivity">
+    tools:context=".CalendariosActivity"
+    tools:ignore="VisualLintBounds">
 
     <Button
         android:id="@+id/btnCrearCalendario"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#1D243D"
         android:textColor="#FFFFFF"
-        android:text="Crear nuevo calendario" />
+        android:text="@string/crear_nuevo_calendario" />
 
     <ListView
         android:id="@+id/lvCalendarios"

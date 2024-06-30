@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etEventTitle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/event_title_hint"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:importantForAutofill="yes"
+        android:autofillHints="title" />
+
+    <EditText
+        android:id="@+id/etEventDescription"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/event_description_hint"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:importantForAutofill="yes"
+        android:autofillHints="description" />
+
+    <EditText
+        android:id="@+id/etEventMedicinas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Introduce las medicinas"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnDatePicker"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/select_date"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btnTimePicker"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/select_time"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

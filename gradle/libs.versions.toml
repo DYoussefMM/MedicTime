@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.1"
+agp = "8.5.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -13,6 +13,11 @@ firebaseAnalytics = "22.0.1"
 comGoogleGmsGoogleServicesGradlePlugin = "4.4.2"
 firebaseAuthKtx = "23.0.0"
 playServicesAuth = "21.2.0"
+collapsibleCalendarViewAndroid = "1.0.4"
+collapsibleCalendarViewAndroidVersion = "v1.0.3"
+firebaseFirestore = "25.0.0"
+firebaseAuth = "23.0.0"
+playServicesGcm = "17.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -27,6 +32,11 @@ firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics
 com-google-gms-google-services-gradle-plugin = { group = "com.google.gms.google-services", name = "com.google.gms.google-services.gradle.plugin", version.ref = "comGoogleGmsGoogleServicesGradlePlugin" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+collapsible-calendar-view-android = { group = "com.github.shrikanth7698", name = "Collapsible-Calendar-View-Android", version.ref = "collapsibleCalendarViewAndroid" }
+shrikanth7698-collapsible-calendar-view-android = { group = "com.github.shrikanth7698", name = "Collapsible-Calendar-View-Android", version.ref = "collapsibleCalendarViewAndroidVersion" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+play-services-gcm = { group = "com.google.android.gms", name = "play-services-gcm", version.ref = "playServicesGcm" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
