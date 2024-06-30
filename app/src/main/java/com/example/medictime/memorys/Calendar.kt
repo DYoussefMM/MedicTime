@@ -7,9 +7,9 @@ import android.os.Parcelable
 data class Calendar(
     val title: String = "",
     val descripcion: String = "",
-    val creator: String = "", // Añadir este campo
-    var events: MutableList<Event> = mutableListOf(), // Lista de eventos
-    var isShared: Boolean = false // Campo para indicar si es compartido
+    val creator: String = "",
+    var events: MutableList<Event> = mutableListOf(),
+    var isShared: Boolean = false
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
@@ -51,7 +51,7 @@ data class Calendar(
         val medicinas: String // Nueva propiedad para medicinas
     ) : Parcelable {
 
-        constructor() : this("", "", 0, "") // Constructor sin argumentos
+        constructor() : this("", "", 0, "")
 
         constructor(parcel: Parcel) : this(
             parcel.readString() ?: "",
@@ -64,7 +64,7 @@ data class Calendar(
             parcel.writeString(title)
             parcel.writeString(description)
             parcel.writeLong(date)
-            parcel.writeString(medicinas) // Escribir la nueva propiedad en el parcel
+            parcel.writeString(medicinas)
         }
 
         override fun describeContents(): Int {
@@ -81,10 +81,4 @@ data class Calendar(
             }
         }
     }
-
 }
-
-
-
-
-

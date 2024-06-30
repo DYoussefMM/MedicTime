@@ -34,7 +34,9 @@ object FirestoreHelper {
         val calendarData = hashMapOf(
             "title" to calendar.title,
             "descripcion" to calendar.descripcion,
-            "events" to calendar.events
+            "creator" to calendar.creator,
+            "events" to calendar.events,
+            "isShared" to calendar.isShared
         )
 
         firestore.collection("users").document(userId).collection("calendars")
@@ -78,7 +80,9 @@ object FirestoreHelper {
         val calendarData = hashMapOf(
             "title" to calendar.title,
             "descripcion" to calendar.descripcion,
-            "events" to calendar.events
+            "creator" to calendar.creator,
+            "events" to calendar.events,
+            "isShared" to calendar.isShared
         )
 
         firestore.collection("sharedCalendars").document(recipientEmail).collection("calendars")

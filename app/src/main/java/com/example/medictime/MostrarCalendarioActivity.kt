@@ -41,10 +41,7 @@ class MostrarCalendarioActivity : AppCompatActivity() {
         selectedCalendar = intent.getParcelableExtra(CalendariosActivity.EXTRA_CALENDAR)
             ?: throw IllegalArgumentException("Calendar data is required")
 
-        val currentUser = auth.currentUser
-        tvUserName.text = currentUser?.displayName ?: "Usuario"
-
-        loadCalendarEvents()
+        tvUserName.text = selectedCalendar.creator
 
         btnAddEvents.setOnClickListener {
             showAddEventDialog()
@@ -107,10 +104,6 @@ class MostrarCalendarioActivity : AppCompatActivity() {
         })
     }
 
-    private fun loadCalendarEvents() {
-        // Implement how to load calendar events, if necessary
-        // No need to add events to CollapsibleCalendar directly, as it is handled internally
-    }
 
     private fun showAddEventDialog() {
         val builder = AlertDialog.Builder(this)
