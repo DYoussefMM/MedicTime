@@ -13,6 +13,8 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:maxWidth="300dp"
+        android:background="#79C266"
+        android:textColorHint="@color/black"
         android:importantForAutofill="yes"
         android:autofillHints="emailAddress" />
 </LinearLayout>

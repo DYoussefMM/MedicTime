@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#59904C"
     android:padding="16dp">
 
     <EditText
@@ -11,6 +12,7 @@
         android:layout_height="48dp"
         android:hint="@string/title_hint"
         android:inputType="text"
+        android:textColorHint="@color/black"
         android:autofillHints="username" />
 
     <EditText
@@ -20,12 +22,16 @@
         android:hint="@string/description_hint"
         android:inputType="text"
         android:layout_marginTop="8dp"
+        android:textColorHint="@color/black"
         android:autofillHints="password" />
 
     <Button
         android:id="@+id/btnCreate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#184600"
+        android:textColor="@color/white"
         android:text="@string/create_button_text"
         android:layout_marginTop="16dp" />
 </LinearLayout>

@@ -2,6 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#1C4700"
     android:padding="16dp">
 
     <EditText
@@ -11,6 +12,7 @@
         android:hint="@string/event_title_hint"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColorHint="@color/white"
         android:importantForAutofill="yes"
         android:autofillHints="title" />
 
@@ -18,6 +20,7 @@
         android:id="@+id/etEventDescription"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
         android:hint="@string/event_description_hint"
         android:inputType="text"
         android:minHeight="48dp"
@@ -29,6 +32,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Introduce las medicinas"
+        android:textColorHint="@color/white"
         android:inputType="text"
         android:minHeight="48dp" />
 
@@ -36,6 +40,8 @@
         android:id="@+id/btnDatePicker"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#508c42"
+        android:textColor="@color/black"
         android:text="@string/select_date"
         android:layout_marginTop="8dp" />
 
@@ -43,6 +49,8 @@
         android:id="@+id/btnTimePicker"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#79C266"
+        android:textColor="@color/black"
         android:text="@string/select_time"
         android:layout_marginTop="8dp" />
 </LinearLayout>
