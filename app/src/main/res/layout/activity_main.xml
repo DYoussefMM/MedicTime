@@ -10,21 +10,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="80dp"
         android:text="@string/bienvenido_a"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:layout_marginStart="65dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="100dp"
         android:text="@string/medictime"
         android:textColor="#FFFFFF"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         />
 
@@ -38,7 +38,7 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp" />
+        android:layout_marginTop="120dp" />
 
     <Button
         android:id="@+id/btnPerfil"

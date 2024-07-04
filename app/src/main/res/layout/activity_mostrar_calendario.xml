@@ -48,7 +48,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="-10dp"
             android:backgroundTint="#4E8A42"
-            android:minHeight="48dp"
+            android:minHeight="49dp"
             android:text="@string/add_events"
             android:textColor="@color/white"
             tools:ignore="VisualLintButtonSize" />
@@ -61,7 +61,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="-20dp"
             android:backgroundTint="#1C4700"
-            android:minHeight="48dp"
+            android:minHeight="49dp"
             android:text="@string/share_calendar"
             android:textColor="@color/white"
             tools:ignore="VisualLintButtonSize,VisualLintBounds" />

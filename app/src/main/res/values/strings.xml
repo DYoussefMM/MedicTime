@@ -27,5 +27,6 @@
     <string name="title_hint">Título del Calendario</string>
     <string name="description_hint">Descripción del Calendario</string>
     <string name="create_button_text">Crear Calendario</string>
+    <string name="introduce_las_medicinas">Introduce las medicinas</string>
 
 </resources>

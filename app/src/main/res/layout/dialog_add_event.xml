@@ -31,7 +31,7 @@
         android:id="@+id/etEventMedicinas"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Introduce las medicinas"
+        android:hint="@string/introduce_las_medicinas"
         android:textColorHint="@color/white"
         android:inputType="text"
         android:minHeight="48dp" />
