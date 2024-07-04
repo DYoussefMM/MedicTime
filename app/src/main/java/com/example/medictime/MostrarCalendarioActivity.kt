@@ -78,28 +78,25 @@ class MostrarCalendarioActivity : AppCompatActivity() {
             }
 
             override fun onDataUpdate() {
-                // Optional implementation
             }
 
             override fun onDayChanged() {
-                // Implement your logic here when the day changes
+
             }
 
             override fun onMonthChange() {
-                // Optional implementation
+
             }
 
             override fun onWeekChange(position: Int) {
-                // Optional implementation
+
             }
 
             override fun onItemClick(v: View) {
-                // Implement your logic here when an item is clicked
+
             }
 
             override fun onClickListener() {
-                // Implement onClickListener method
-                // This method will be invoked when an element of the calendar is clicked
             }
         })
     }
